@@ -46,7 +46,7 @@ function animateParticles() {
   }
 
 function cube() {
-  const texture = new THREE.TextureLoader().load("assets/textures/wooden.jpg");
+  const texture = new THREE.TextureLoader().load("assets/textures/wooden.jpg");//literally changed the png to have my name
   const cubeMaterial = new THREE.MeshBasicMaterial({ map: texture });
   const cubeGeometry = new THREE.BoxGeometry(10, 5, 5, 5);
   cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
@@ -72,6 +72,8 @@ function lighting() {
   scene.add(spotLight);
 }
 
+const timer = new Timer();
+
 function animate() {
   requestAnimationFrame(animate);
 
@@ -79,6 +81,7 @@ function animate() {
 
   cubeMesh.rotation.x += 0.008;
   cubeMesh.rotation.y += 0.008;
+
   renderer.render(scene, camera);
 }
 
